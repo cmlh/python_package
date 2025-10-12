@@ -1,0 +1,15 @@
+---
+name: PyCharm Security
+"on":
+  push:
+  pull_request:
+  schedule:
+    - cron: '* * 3 * *'
+jobs:
+  security_checks:
+    # runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    name: Execute the pycharm-security action
+    steps:
+      - name: Run PyCharm Security
+        uses: tonybaloney/pycharm-security@master
